@@ -84,4 +84,40 @@ export default function AppVotaciones() {
       </div>
     );
   }
+
+
+
+  //pantalla de votacion
+  if (pantallaActual === "votacion") {
+    return (
+      <div style={{ padding: "50px", textAlign: "center", fontFamily: "sans-serif" }}>
+        {/* Usamos el nombre que ingresó en la pantalla anterior */}
+        <h1>🗳️ ¡Hola {datosVotante.nombre ? datosVotante.nombre : "Votante"}!</h1>
+        <p>Selecciona el dia comodo para la ayudantiia:</p>
+
+        <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "30px" }}>
+          <button 
+            style={{ padding: "15px 25px", fontSize: "16px", cursor: "pointer", borderRadius: "8px" }}
+            onClick={() => registrarVoto('Lunes')}
+          >
+            Lunes <br /><strong>{votos.Lunes} votos</strong>
+          </button>
+
+          <button 
+            style={{ padding: "15px 25px", fontSize: "16px", cursor: "pointer", borderRadius: "8px" }}
+            onClick={() => registrarVoto('Miercoles')}
+          >
+            Miercoles <br /><strong>{votos.Miercoles} votos</strong>
+          </button>
+
+          <button 
+            style={{ padding: "15px 25px", fontSize: "16px", cursor: "pointer", borderRadius: "8px" }}
+            onClick={() => registrarVoto('Viernes')}
+          >
+           Viernes <br /><strong>{votos.Viernes} votos</strong>
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
